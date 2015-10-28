@@ -1,0 +1,127 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class mainMarket {
+    public static void main(String[] args)
+    {
+        Market m = new Market();//create the market right away
+        //Agent a = new Agent(); //buyer/sellers/traders
+        String l = provideTUI();
+        @SuppressWarnings({ "unused", "resource" })
+                Scanner sc = new Scanner(System.in);
+                                            //The following
+gives us 2 things, the market and a stock to look for
+        searchForStock(l, m.getIndex());
+stock you're searching for, m.getIndex()
+the market
+        String b = buyOrNah();
+do{
+        if (b.equalsIgnoreCase("y"))
+        {
+//remember l is the
+//  is all stocks in
+again
+}
+String l3;
+buyStock(l, m.getIndex());  //buy stock
+l3 = provideTUI();  //then ask again
+searchForStock(l3, m.getIndex());  //then search
+    buyStock2(l3, m.getIndex());  //buy stock
+else
+}
+{
+    String l2 = provideTUI(); //ask
+    searchForStock(l2, m.getIndex()); //search
+    buyStock(l2, m.getIndex());  //buy stock
+}
+} while(b!="y");
+    private static void searchForStock(String l,
+ArrayList<Stock> index)
+    {
+        //get the stock in the index with the same name as the
+symbol I just typed in
+        for(Stock s : index)
+        {
+            if(l.equalsIgnoreCase(s.getSymbol()))  //so if the
+stock equals what i'm searching for
+            {
+                System.out.println("\n\n\n\n\n" + "Stock
+Found!"); //worked!
+                System.out.println("Stock Symbol:
+"+s.getSymbol() +
+} }
+}
+"\nLast Sold At Price: $"+s.getPrice() +
+"\nBuy Volume: "+ s.getIpoQty() );
+    private static void buyStock(String l, ArrayList<Stock>
+index)
+{
+for(Stock s : index)
+{
+    if(l.equalsIgnoreCase(s.getSymbol()))
+        {
+                System.out.println("How many of this stock would
+you like to buy?");
+                @SuppressWarnings("resource")
+                               Scanner sc = new
+Scanner(System.in);
+                int quantity = sc.nextInt();
+                Transaction t = new Transaction();
+                Porfolio p = new Porfolio();
+                t.stockPrice = s.getPrice();
+                t.symbolName = s.getSymbol();
+                t.numberBought = quantity;
+                p.addStockToPortfolio(t);
+                System.out.println("\n\nTransaction for " + l +
+" has been saved in your Portfolio.");
+                p.printPortfolio(t);
+} }
+}
+    private static void buyStock2(String l3, ArrayList<Stock>
+index)
+{
+                System.out.println("How many of this stock would
+you like to buy?");
+                @SuppressWarnings("resource")
+                               Scanner sc = new
+for(Stock s : index)
+{
+    if(l3.equalsIgnoreCase(s.getSymbol()))
+        {
+Scanner(System.in);
+                int quantity = sc.nextInt();
+                Transaction t = new Transaction();
+                Porfolio p = new Porfolio();
+                t.stockPrice = s.getPrice();
+                t.symbolName = s.getSymbol();
+                t.numberBought = quantity;
+                p.addStockToPortfolio(t);
+                System.out.println("\n\nTransaction for " + l3 +
+" has been saved in your Portfolio.");
+                p.printPortfolio(t);
+} }
+}
+    public static String provideTUI()
+stock to search for, then pass it to l in main
+    {
+        @SuppressWarnings("resource")
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input the symbol of a stock to
+research: ");
+        String symbolName = sc.next();
+        //compareInputToStocksInMyIndex(symbolName); //initiate
+the search for stocks of that name
+        System.out.println("\n\n\n ...Searching for " +
+symbolName);
+        return symbolName;
+//use this to choose a
+}
+    public static String buyOrNah()
+    {
+        @SuppressWarnings("resource")
+                Scanner sc = new Scanner(System.in);
+        System.out.println("Would you like to buy this stock?
+(y/n)");
+        String choice= sc.next();
+        return choice;
+    }
+}
