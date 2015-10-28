@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+ 
+ 
+public class Porfolio 
+ 
+{
+    ArrayList<Transaction> portfolio = new ArrayList<Transaction>();
+     
+    /*
+     * RECORD OF PURCHASES OF STOCK
+     */
+     
+    public Porfolio()
+    {
+    //private ArrayList<Stock> index = new ArrayList<Stock>();
+     
+     
+    }
+     
+    public void addStockToPortfolio(Transaction t)
+    {
+        portfolio.add(t);
+    }
+     
+    /**
+     * 
+     * print the portfolio
+     */
+    public void printPortfolio(Transaction t)
+    {
+        @SuppressWarnings("unused")
+		ArrayList<Stock> index;
+         
+        System.out.println("\n\nHere is your portfolio: \n\n");
+         
+//  for (Stock s : index)
+    {
+        System.out.println("Transaction ID: " + t);
+        System.out.println("Stock: " + t.symbolName);
+        System.out.println("Price: $" + t.stockPrice);
+        System.out.println("Amount Purchased: " + t.numberBought);
+        System.out.println("Total: $" + (t.stockPrice * t.numberBought));
+     
+    }
+         
+    }
+ 
+}
