@@ -1,0 +1,338 @@
+import java.util.Random;
+
+public class Stock {
+    private double lastSalePrice; 
+    private double price; 
+    private String symbol = ""; //string is a word, or collection of letters/characters
+    private int ipoQty; //"buy volume"
+    private double lastSaleVolume; 
+    private String industry; //the industry the stock is in
+     
+    /**
+     * set up the symbol, price ipoQty
+     */
+    public Stock() 
+    {   
+        setRandomStockName(); //@ define what the stock needs to know when it's created
+        //setSymbol(s);
+         
+        double x = setUpRandomPrice();
+        setPrice(x);
+         
+        int l = setRandomIPOQTY(); //get an integer back
+        setIpoQty(l); //use that result to set the IPO QTY
+    }
+ 
+    /**
+     * establish a random number, which will represent the intial stock float
+     * @return
+     */
+    private int setRandomIPOQTY() 
+    {
+        Random r = new Random();
+        int l = r.nextInt() / 100;
+        if (l < 0)  //correct for negative values
+        {
+            l = l * -1; //turn it positive
+        }
+         
+        return l;
+    }
+ 
+    /**
+     * first, generate a random number, then assign to the price variable
+     * this will be the initial price for the stock
+     * @return
+     */
+    private double setUpRandomPrice() 
+    {
+        Random r = new Random();
+        double price = r.nextDouble() * 10.0; //should resemble a retail stock price
+        return price;
+    }
+ 
+/**
+ * set the name of the stock symbol
+ * @return
+ */
+ 
+ 
+  private String setRandomStockName() {
+        //String s = "MEME";//not really random
+         
+        //1. grab a random integer, divide by 100,000,000
+         
+        //2. if the integer is between a certain set of numbers, return a string
+        for(int i = 0; i <1 ; i++)
+        {
+            Random r = new Random();
+            @SuppressWarnings("unused")
+			double l = r.nextDouble();
+//          if (l>.0 && l<.3 )
+//          {
+                for(int f = 0; f <4 ; f++)
+                {
+                    @SuppressWarnings("unused")
+					Random rrrr = new Random();
+                    double llll = r.nextDouble();   
+                    symbol = symbol + generateLetter(llll);
+                     
+                     
+                }
+//          }
+             
+//          else if (l>.3 && l<.6 )
+//          {
+//              for(int t = 0; t <3 ; t++)
+//              {
+//                  Random rrr = new Random();
+//                  double lll = r.nextDouble();    
+//                  symbol = symbol + generateLetter(lll);
+//              }
+//          }
+//          
+//          else 
+//          {
+//              for(int e = 0; e <2 ; e++)
+//              {
+//                  Random rr = new Random();
+//                  double ll = r.nextDouble(); 
+//                  symbol = symbol + generateLetter(ll);
+//              }
+//          }
+                 
+        }
+         
+         
+        return symbol;
+    }
+     
+    public static String generateLetter(double n)
+    {
+         
+        String l = "";//empty, or null, to begin
+         
+     
+         
+        if(n <= 0.038461538461538464)
+        {
+            l = "A";
+        }
+        else if(n >= 0.038461538461538464 && n <=0.07692307692307693)
+        {
+            l = "B";
+        }
+        else if(n >= 0.07692307692307693 && n <=0.11538461538461539)
+        {
+            l = "C";
+        }
+        else if(n >=0.11538461538461539 && n<=0.15384615384615385)
+        {
+            l = "D";
+        }
+         
+        else if(n >=0.15384615384615385 && n<=0.19230769230769232)
+        {
+            l = "E";
+        }
+         
+        else if(n >=0.19230769230769232 && n<=0.23076923076923078)
+        {
+            l = "F";
+        }
+         
+        else if(n >= 0.23076923076923078 && n <=0.2692307692307693)
+        {
+            l = "G";
+        }
+        else if(n >= 0.2692307692307693 && n <=0.3076923076923077)
+        {
+            l = "H";
+        }
+        else if(n >= 0.3076923076923077 && n <=0.34615384615384615)
+        {
+            l = "I";
+        }
+         
+        else if(n >= 0.34615384615384615 && n <=0.3846153846153846)
+ 
+        {
+            l = "J";
+        }
+         
+        else if(n >= 0.3846153846153846 && n <=0.423076923076923)
+        {
+            l = "K";
+        }
+         
+        else if(n >= 0.423076923076923 && n <=0.46153846153846145)
+        {
+            l = "L";
+        }
+        else if(n >= 0.46153846153846145 && n <=0.4999999999999999)
+        {
+            l = "M";
+        }
+        else if(n >= 0.4999999999999999 && n <=0.5384615384615383)
+        {
+            l = "N";
+        }
+        else if(n >= 0.5384615384615383 && n <=0.5769230769230768)
+        {
+            l = "O";
+        }
+         
+        else if(n >= 0.5769230769230768 && n <=0.6153846153846152)
+        {
+            l = "P";
+        }
+         
+        else if(n >= 0.6153846153846152 && n <=0.6538461538461536)
+        {
+            l = "Q";
+        }
+         
+        else if(n >= 0.6538461538461536 && n <=0.6923076923076921)
+        {
+            l = "R";
+        }
+        else if(n >= 0.6923076923076921 && n <=0.7307692307692305)
+        {
+            l = "S";
+        }
+        else if(n >= 0.7307692307692305 && n <=0.7692307692307689)
+        {
+            l = "T";
+        }
+         
+        else if(n >= 0.7692307692307689 && n <=0.8076923076923074)
+        {
+            l = "U";
+        }
+         
+        else if(n >= 0.8076923076923074 && n <=0.8461538461538458)
+        {
+            l = "V";
+        }
+        else if(n >= 0.8461538461538458 && n <=0.8846153846153842)
+        {
+            l = "W";
+        }
+        else if(n >= 0.8846153846153842 && n <=0.9230769230769227)
+        {
+            l = "X";
+        }
+        else if(n >= 0.9230769230769227 && n <=0.9615384615384611)
+        {
+            l = "Y";
+        }
+         
+        else
+        {
+            l = "Z";
+        }
+         
+         
+     
+         
+        return l;
+    }
+  
+ 
+ 
+ 
+    /**
+     * @return the lastSalePrice
+     */
+    public double getLastSalePrice() {
+        return lastSalePrice;
+    }
+ 
+ 
+    /**
+     * @param lastSalePrice the lastSalePrice to set
+     */
+    public void setLastSalePrice(double lastSalePrice) {
+        this.lastSalePrice = lastSalePrice;
+    }
+ 
+ 
+    /**
+     * @return the price
+     */
+    public double getPrice() {
+        return price;
+    }
+ 
+ 
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(double price) 
+    {
+        this.price = price;
+    }
+ 
+ 
+    /**
+     * @return the symbol
+     */
+    public String getSymbol() {
+        return symbol;
+    }
+ 
+ 
+    /**
+     * @param symbol the symbol to set
+     */
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+ 
+ 
+    /**
+     * @return the ipoQty
+     */
+    public int getIpoQty() {
+        return ipoQty;
+    }
+ 
+ 
+    /**
+     * @param ipoQty the ipoQty to set
+     */
+    public void setIpoQty(int ipoQty) {
+        this.ipoQty = ipoQty;
+    }
+ 
+ 
+    /**
+     * @return the lastSaleVolume
+     */
+    public double getLastSaleVolume() {
+        return lastSaleVolume;
+    }
+ 
+ 
+    /**
+     * @param lastSaleVolume the lastSaleVolume to set
+     */
+    public void setLastSaleVolume(double lastSaleVolume) {
+        this.lastSaleVolume = lastSaleVolume;
+    }
+ 
+    /**
+     * @return the industry
+     */
+    public String getIndustry() {
+        return industry;
+    }
+ 
+    /**
+     * @param industry the industry to set
+     */
+    public void setIndustry(String industry) {
+        this.industry = industry;
+    }
+ 
+} 
